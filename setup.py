@@ -18,7 +18,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.7",
     install_requires=[
-        "chia~=2.0rc16",
+        "chia~=2.0rc17",
         "tables~=3.6.1",
         "pandas~=1.0.4",
         "pyqt5~=5.15.0",
