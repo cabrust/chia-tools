@@ -3,3 +3,5 @@ venv/
 .vscode/
 .idea/
 chia_tools.egg-info
+build/
+dist/
