@@ -17,7 +17,7 @@ setup(
     packages=find_packages(),
     python_requires=">=3.7",
     install_requires=[
-        "chia==2.0rc16",
+        "chia~=2.0rc16",
     ],
     # metadata to display on PyPI
     author="Clemens-Alexander Brust",
