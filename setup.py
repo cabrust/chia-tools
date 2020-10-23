@@ -3,7 +3,7 @@ from distutils import util
 from setuptools import find_packages, setup
 
 main_ns = {}
-ver_path = util.convert_path("chiatools/version.py")
+ver_path = util.convert_path("chia/tools/version.py")
 
 with open(ver_path) as ver_file:
     exec(ver_file.read(), main_ns)
