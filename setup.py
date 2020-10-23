@@ -14,7 +14,7 @@ with open("README.md", "r") as fh:
 setup(
     name="chia-tools",
     version=main_ns["__version__"],
-    packages=find_packages(),
+    packages=["chia/tools"],
     include_package_data=True,
     python_requires=">=3.7",
     install_requires=[
