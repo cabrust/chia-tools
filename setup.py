@@ -34,5 +34,5 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    url="https://github.com/cvjena/chia-tools",
+    url="https://github.com/cabrust/chia-tools",
 )
