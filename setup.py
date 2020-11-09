@@ -3,7 +3,7 @@ from distutils import util
 from setuptools import find_packages, setup
 
 main_ns = {}
-ver_path = util.convert_path("chia/tools/version.py")
+ver_path = util.convert_path("chia_tools/version.py")
 
 with open(ver_path) as ver_file:
     exec(ver_file.read(), main_ns)
@@ -14,7 +14,7 @@ with open("README.md", "r") as fh:
 setup(
     name="chia-tools",
     version=main_ns["__version__"],
-    packages=["chia/tools"],
+    packages=["chia_tools"],
     include_package_data=True,
     python_requires=">=3.7",
     install_requires=[
