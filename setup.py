@@ -18,6 +18,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.7",
     install_requires=[
+        "tqdm~=4.51"
         "tables~=3.6.1",
         "pandas~=1.0.4",
         "pyqt5~=5.15.0",
