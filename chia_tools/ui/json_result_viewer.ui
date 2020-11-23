@@ -29,7 +29,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_info">
       <attribute name="title">
@@ -496,6 +496,11 @@
          <attribute name="horizontalHeaderStretchLastSection">
           <bool>true</bool>
          </attribute>
+         <column>
+          <property name="text">
+           <string>Timestamp</string>
+          </property>
+         </column>
          <column>
           <property name="text">
            <string>Level</string>
