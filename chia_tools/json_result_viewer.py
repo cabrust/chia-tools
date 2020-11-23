@@ -2,7 +2,9 @@ import argparse
 import gzip
 import json
 import typing
+import logging
 from pathlib import Path
+from datetime import datetime
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
@@ -41,6 +43,9 @@ class JSONResultViewerUI(QtWidgets.QWidget):
 
         # Results
         self.setup_tab_result()
+
+        # Logs
+        self.setup_tab_log()
 
     def setup_tab_result(self):
         # Read combinations of metrics and senders
@@ -299,6 +304,37 @@ class JSONResultViewerUI(QtWidgets.QWidget):
             )
             self.table_configuration.setItem(
                 i, 2, QtWidgets.QTableWidgetItem(str(config_message["value"]))
+            )
+
+    def setup_tab_log(self):
+        relevant_log_messages = self.json_obj["LogMessage"]
+
+        self.table_log.setRowCount(len(relevant_log_messages))
+        self.table_log.setColumnWidth(0, 180)
+        self.table_log.setColumnWidth(1, 100)
+        self.table_log.setColumnWidth(2, 280)
+
+        for i, log_message in enumerate(relevant_log_messages):
+            date_object = datetime.fromtimestamp(log_message["timestamp"])
+            self.table_log.setItem(
+                i,
+                0,
+                QtWidgets.QTableWidgetItem(
+                    str(date_object.strftime("%Y-%m-%d %H:%M:%S"))
+                ),
+            )
+            self.table_log.setItem(
+                i,
+                1,
+                QtWidgets.QTableWidgetItem(
+                    str(logging.getLevelName(log_message["level"]))
+                ),
+            )
+            self.table_log.setItem(
+                i, 2, QtWidgets.QTableWidgetItem(str(log_message["sender"]))
+            )
+            self.table_log.setItem(
+                i, 3, QtWidgets.QTableWidgetItem(str(log_message["message"]))
             )
 
     def setup_tab_raw_json(self):
