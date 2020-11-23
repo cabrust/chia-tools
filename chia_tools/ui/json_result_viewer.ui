@@ -29,7 +29,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_info">
       <attribute name="title">
@@ -473,6 +473,44 @@
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_log">
+      <attribute name="title">
+       <string>Log</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QTableWidget" name="table_log">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>110</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Level</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Sender</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Message</string>
+          </property>
+         </column>
         </widget>
        </item>
       </layout>

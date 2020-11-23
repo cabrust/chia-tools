@@ -47,8 +47,13 @@ class JSONResultViewerUI(QtWidgets.QWidget):
         message_type_dict = dict()
         for message_obj in self.json_obj["ResultMessage"]:
             sender_name = message_obj["sender"]
-            for result_key in message_obj["result_dict"].keys():
+            for result_key, result_value in message_obj["result_dict"].items():
                 key = (sender_name, result_key)
+                if not (
+                    isinstance(result_value, int) or isinstance(result_value, float)
+                ):
+                    # We don't want to display such items at all
+                    continue
                 if key in message_type_dict.keys():
                     message_type_dict[key] += 1
                 else:
@@ -152,6 +157,12 @@ class JSONResultViewerUI(QtWidgets.QWidget):
         # Read combinations of metrics and senders
         message_type_dict = dict()
         for message_obj in self.json_obj["MetricMessage"]:
+            if not (
+                isinstance(message_obj["value"], int)
+                or isinstance(message_obj["value"], float)
+            ):
+                # Filter out undisplayable things
+                continue
             key = (message_obj["sender"], message_obj["metric"])
             if key in message_type_dict.keys():
                 message_type_dict[key] += 1
