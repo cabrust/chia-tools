@@ -23,7 +23,7 @@ setup(
         "pandas~=1.0.4",
         "pyqt5~=5.15.0",
         "matplotlib~=3.2.1",
-        "chia~=2.0rc20",
+        "chia~=2.0rc21",
     ],
     # metadata to display on PyPI
     author="Clemens-Alexander Brust",
