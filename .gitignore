@@ -5,3 +5,4 @@ venv/
 chia_tools.egg-info
 build/
 dist/
+test/
