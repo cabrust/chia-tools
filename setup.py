@@ -23,7 +23,7 @@ setup(
         "pandas~=1.0.4",
         "pyqt5~=5.15.0",
         "matplotlib~=3.2.1",
-        "chia~=2.3.0",
+        "chia~=2.4.0",
     ],
     # metadata to display on PyPI
     author="Clemens-Alexander Brust",
@@ -34,6 +34,7 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
     url="https://github.com/cabrust/chia-tools",
 )
